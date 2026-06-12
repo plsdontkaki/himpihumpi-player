@@ -1,0 +1,19 @@
+# mod_rewrite starts here
+
+# Prevent Apache MultiViews from interfering with extensionless URLs
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+# Redirect direct requests for /file.html to /file (canonical URL)
+# Uses THE_REQUEST to avoid redirect loops from internal rewrites
+RewriteCond %{THE_REQUEST} \s/([^\s]+)\.html [NC]
+RewriteRule ^([^/]+)\.html$ /%1 [R=301,L]
+
+# If the request isn't a real file or directory, but a corresponding .html exists,
+# internally serve the .html while keeping the extensionless URL.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]

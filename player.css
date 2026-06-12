@@ -259,6 +259,78 @@
     border-color: rgba(255, 255, 255, 0.4);
 }
 
+@media (max-width: 900px) {
+    .player-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .player-left {
+        width: 100%;
+        max-width: 420px;
+        flex: 1 1 auto;
+        padding: 0 10px;
+    }
+
+    .player-left > * {
+        width: 100%;
+    }
+
+    .album-art-large {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .controls-section {
+        max-width: none;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+
+    .control-btn {
+        max-width: none;
+        flex: 1 1 100px;
+    }
+
+    .play-btn {
+        flex: 2 1 220px;
+    }
+
+    .volume-control {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+    }
+
+    .volume-control label {
+        text-align: left;
+        width: 100%;
+    }
+
+    .progress-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .progress-bar {
+        max-width: 100%;
+    }
+
+    .player-right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .playlist {
+        width: 100%;
+        max-width: none;
+    }
+}
+
 .playlist-item-title {
     color: white;
     font-family: "Stack Sans Headline", sans-serif;

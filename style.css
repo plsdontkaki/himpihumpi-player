@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+body{
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 98vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    user-select: none;
+}
+
+h1{
+    color: white;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-size: 4rem;
+}
+
+h2{
+    color: rgb(80, 80, 80);
+    font-family: "Stack Sans Headline", sans-serif;
+    font-size: 3rem;
+}
+
+p{
+    color: white;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-size: 2rem;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.096);
+    max-width: 20vw;
+    max-height: 57vh;
+    min-width: 20vw;
+    min-height: 57vh;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.199);
+    padding-bottom: 10px;
+    transition: 0.2s;
+    margin: 20px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    background-color: rgba(255, 255, 255, 0.178);
+    transition: 0.2s;
+}
+
+.img{
+    width: 300px;
+    border-radius: 25px;
+}
+
+button{
+    background-color: rgba(255, 235, 205, 0);
+    border-style: none;
+    
+}
+
+a{
+    text-decoration: none;
+    color : white;
+}
+
+footer{
+    margin-top: auto;
+}
+
+span{
+    color: rgb(53, 53, 53);
+    font-family: "Stack Sans Headline", sans-serif;
+    font-size: 1rem;
+}

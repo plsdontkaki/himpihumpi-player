@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zóna Y - Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>Zóna Y</h1>
+        
+        <div class="player-main">
+            <div class="player-left">
+                <img id="nowPlayingImg" src="music/zona-y.jpeg" alt="Album art" class="album-art-large">
+                <div class="song-info-section">
+                    <h2 id="nowPlayingTitle">Select a song</h2>
+                    <p id="nowPlayingArtist">Artist</p>
+                </div>
+                <div class="controls-section">
+                    <div class="controls">
+                        <button id="prevBtn" class="control-btn">⏮ Previous</button>
+                        <button id="playBtn" class="control-btn play-btn">▶ Play</button>
+                        <button id="nextBtn" class="control-btn">Next ⏭</button>
+                    </div>
+                    <div class="progress-container">
+                        <span id="currentTime">0:00</span>
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="volume-control">
+                        <label for="volumeSlider">Volume:</label>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                    </div>
+                </div>
+            </div>
+            <div class="player-right">
+                <div class="playlist">
+                    <h3>Playlist</h3>
+                    <div id="playlistContainer" class="playlist-items">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>made by rage, reuploaded by <a href="https://erikrobi.hu" target="_blank">erikrobi</a></span>
+        </footer>
+    </div>
+    <audio id="audioPlayer"></audio>
+    <script src="songlist.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>

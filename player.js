@@ -15,14 +15,12 @@ const nowPlayingArtist = document.getElementById('nowPlayingArtist');
 const nowPlayingImg = document.getElementById('nowPlayingImg');
 const playlistContainer = document.getElementById('playlistContainer');
 
-// Initialize player
 function init() {
     loadPlaylist();
     loadSong(currentSongIndex);
     audioPlayer.volume = volumeSlider.value / 100;
 }
 
-// Load song
 function loadSong(index) {
     const song = All_song[index];
     audioPlayer.src = song.path;
@@ -32,7 +30,6 @@ function loadSong(index) {
     updatePlaylistUI();
 }
 
-// Load playlist UI
 function loadPlaylist() {
     playlistContainer.innerHTML = '';
     All_song.forEach((song, index) => {
@@ -54,21 +51,18 @@ function loadPlaylist() {
     });
 }
 
-// Play song
 function play() {
     audioPlayer.play();
     isPlaying = true;
     playBtn.textContent = '⏸ Pause';
 }
 
-// Pause song
 function pause() {
     audioPlayer.pause();
     isPlaying = false;
     playBtn.textContent = '▶ Play';
 }
 
-// Toggle play/pause
 playBtn.addEventListener('click', () => {
     if (isPlaying) {
         pause();
@@ -77,7 +71,6 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-// Previous song
 prevBtn.addEventListener('click', () => {
     currentSongIndex--;
     if (currentSongIndex < 0) {
@@ -87,7 +80,6 @@ prevBtn.addEventListener('click', () => {
     play();
 });
 
-// Next song
 nextBtn.addEventListener('click', () => {
     currentSongIndex++;
     if (currentSongIndex >= All_song.length) {
@@ -97,7 +89,6 @@ nextBtn.addEventListener('click', () => {
     play();
 });
 
-// Auto next when song ends
 audioPlayer.addEventListener('ended', () => {
     currentSongIndex++;
     if (currentSongIndex >= All_song.length) {
@@ -107,32 +98,26 @@ audioPlayer.addEventListener('ended', () => {
     play();
 });
 
-// Update time
 audioPlayer.addEventListener('timeupdate', () => {
     const { currentTime, duration } = audioPlayer;
     
-    // Update progress bar
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`;
     
-    // Update time displays
     currentTimeEl.textContent = formatTime(currentTime);
     durationEl.textContent = formatTime(duration);
 });
 
-// Progress bar click
 progressBar.addEventListener('click', (e) => {
     const rect = progressBar.getBoundingClientRect();
     const percent = (e.clientX - rect.left) / rect.width;
     audioPlayer.currentTime = percent * audioPlayer.duration;
 });
 
-// Volume control
 volumeSlider.addEventListener('input', (e) => {
     audioPlayer.volume = e.target.value / 100;
 });
 
-// Format time helper
 function formatTime(seconds) {
     if (isNaN(seconds)) return '0:00';
     
@@ -141,7 +126,6 @@ function formatTime(seconds) {
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
-// Update playlist UI highlighting
 function updatePlaylistUI() {
     const items = playlistContainer.querySelectorAll('.playlist-item');
     items.forEach((item, index) => {
@@ -153,5 +137,4 @@ function updatePlaylistUI() {
     });
 }
 
-// Initialize on load
 window.addEventListener('DOMContentLoaded', init);

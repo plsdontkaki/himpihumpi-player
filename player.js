@@ -54,13 +54,13 @@ function loadPlaylist() {
 function play() {
     audioPlayer.play();
     isPlaying = true;
-    playBtn.textContent = '⏸ Pause';
+    playBtn.textContent = '⏸';
 }
 
 function pause() {
     audioPlayer.pause();
     isPlaying = false;
-    playBtn.textContent = '▶ Play';
+    playBtn.textContent = '▶';
 }
 
 playBtn.addEventListener('click', () => {

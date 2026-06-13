@@ -266,6 +266,82 @@
     border-color: rgba(255, 255, 255, 0.4);
 }
 
+@media (min-width: 2560px) {
+    .player-main {
+        max-width: 1600px;
+    }
+
+    .player-left {
+        flex: 0 0 600px;
+        width: 600px;
+    }
+
+    .album-art-large {
+        width: 350px;
+        height: 450px;
+    }
+
+    .controls-section {
+        max-width: 400px;
+        max-height: 300px;
+        min-height: 300px;
+    }
+
+    .control-btn {
+        max-width: 200px;
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+
+    .play-btn {
+        max-width: 250px;
+        font-size: 1.1rem;
+        padding: 16px 24px;
+    }
+
+    .volume-control {
+        max-width: 400px;
+        padding: 16px 24px;
+    }
+
+    .volume-control label {
+        font-size: 1rem;
+    }
+
+    .progress-container {
+        max-width: 400px;
+    }
+
+    .player-right {
+        min-width: 600px;
+        min-height: 800px;
+    }
+
+    .playlist {
+        max-width: 1200px;
+    }
+
+    .playlist-items {
+        max-height: 600px;
+    }
+
+    .playlist h3{
+        font-size: 2rem;
+    }
+
+    .playlist-item {
+        padding: 16px;
+    }
+
+    .playlist-item-title {
+        font-size: 2rem !important; 
+    }
+
+    .playlist-item-artist {
+        font-size: 1.5rem !important;
+    }
+}
+
 @media (max-width: 900px) {
     .player-main {
         flex-direction: column;
